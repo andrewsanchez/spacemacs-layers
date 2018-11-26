@@ -14,9 +14,11 @@ values."
      auto-completion
      better-defaults
      themes-megapack
-     (python :variables)
+     (python :variables
+             python-test-runner 'pytest)
+     (git :variables
+          git-magit-status-fullscreen t)
      emacs-lisp
-     git
      markdown
      org
      spell-checking
