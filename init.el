@@ -24,6 +24,9 @@ values."
      org
      spell-checking
      syntax-checking
+
+     ;; Personal configuration layers
+     as-org
      )
    dotspacemacs-additional-packages '()
    dotspacemacs-frozen-packages '()
