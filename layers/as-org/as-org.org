@@ -121,7 +121,7 @@
 #+end_src
 * Hydras
 *** Main
-#+begin_src elisp
+#+begin_src elisp :tangle no
   (defhydra hydra-org-mode ()
     "Org-mode"
     ("t" org-todo "org-todo")
@@ -139,8 +139,8 @@
     ("$" org-archive-done-tasks "org-archive-done-tasks"))
     (evil-leader/set-key-for-mode 'org-mode "m" 'hydra-org-mode/body)
 #+end_src
-*** Clock
-#+begin_src elisp
+*** Clock 
+#+begin_src elisp :tangle no
   (defhydra hydra-org-clock (:color blue :hint nil)
           "
           Clock   In/out^     ^Edit^   ^Summary     (_?_)
@@ -162,7 +162,7 @@
           ("?" (org-info "Clocking commands")))
 #+end_src
 *** Block templates
-#+begin_src elisp
+#+begin_src elisp :tangle no
  (defhydra hydra-org-template (:color blue :hint nil)
    "
  _c_enter  _q_uote    _L_aTeX:
