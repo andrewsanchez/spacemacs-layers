@@ -17,15 +17,17 @@ values."
      auto-completion
      better-defaults
      themes-megapack
+     emacs-lisp
+     markdown
+     org
+     syntax-checking
+
      (python :variables
              python-test-runner 'pytest)
      (git :variables
           git-magit-status-fullscreen t)
-     emacs-lisp
-     markdown
-     org
-     spell-checking
-     syntax-checking
+     (spell-checking :variables
+                     spell-checking-enable-by-default nil)
 
      ;; Personal configuration layers
      as-org
