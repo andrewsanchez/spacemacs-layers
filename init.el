@@ -11,6 +11,8 @@ values."
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
    '(
+     yaml
+     csv
      helm
      auto-completion
      better-defaults
