@@ -7,23 +7,23 @@
         as/agenda (concat as/org "agenda/")
         as/views (concat (getenv "HOME") "/org/views/")
         as/gtd (concat as/org "gtd.org"))
-  (setq org-default-notes-file "/Users/andrew/org/notes.org")
-  (setq org-hide-leading-stars t)
-  (setq org-todo-keywords
-    '((sequence "TODO" "|" "DONE")))
-  (setq org-refile-targets '((nil :maxlevel . 3)
-                         (org-agenda-files :maxlevel . 2)))
-  (setq org-outline-path-complete-in-steps nil)
-  (setq org-completion-use-ido nil)
-  (setq org-refile-use-outline-path t) 
+  (setq org-default-notes-file "/Users/andrew/org/notes.org"
+        org-hide-leading-stars t
+        org-todo-keywords
+        '((sequence "TODO" "|" "DONE"))
+        org-refile-targets '((nil :maxlevel . 3)
+                             (org-agenda-files :maxlevel . 2))
+        org-outline-path-complete-in-steps nil
+        org-completion-use-ido nil
+        org-refile-use-outline-path t)
   (defun as/verify-refile-target ()
     "Exclude todo keywords with a done state from refile targets"
     (not (member (nth 2 (org-heading-components)) org-done-keywords)))
-  (setq org-refile-target-verify-function 'as/verify-refile-target)
-  (setq org-refile-allow-creating-parent-nodes 'confirm)
-  (setq org-src-fontify-natively t)
+  (setq org-refile-target-verify-function 'as/verify-refile-target
+        org-refile-allow-creating-parent-nodes 'confirm
+        org-src-fontify-natively t
+        org-duration-format (quote h:mm))
   ;; (add-to-list 'org-modules 'org-habit)
-  (setq org-duration-format (quote h:mm))
 #+end_src
 
 * Babel
@@ -34,15 +34,17 @@
       (org-babel-tangle)
       (message "%s tangled" buffer-file-name)))
   (add-hook 'after-save-hook #'as/tangle-dotfiles)
-  (setq org-src-window-setup (quote current-window))
+  (setq org-src-window-setup (quote current-window)
+        org-confirm-babel-evaluate nil)
   (org-babel-do-load-languages
    'org-babel-load-languages
-   '(
-     (python . t)
+   '((python . t)
      (emacs-lisp . t)
      (shell . t)))
-   (setq org-confirm-babel-evaluate nil)
 #+end_src
+
+#+RESULTS:
+
 * Capture
 #+begin_src elisp
   (setq org-capture-templates
