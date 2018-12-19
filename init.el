@@ -50,9 +50,16 @@ This function should only modify configuration layer settings."
      markdown
      org
      syntax-checking
-     (python :variables python-test-runner 'pytest)
+     (python
+      :variables
+      python-test-runner 'pytest
+      python-backend 'anaconda)
      (git :variables git-magit-status-fullscreen t)
      (spell-checking :variables spell-checking-enable-by-default nil)
+     (deft
+       :variables
+       deft-directory (concat (getenv "HOME") "/org/")
+       deft-recursive t)
 
      ;; Personal configuration layers
      as-org
