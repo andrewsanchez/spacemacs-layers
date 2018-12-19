@@ -464,7 +464,9 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq evil-search-highlight-persist  nil)
-  (setq python-backend 'anaconda)
+  (deft-find-file "gtd.org")
+  (deft-find-file "PMI/PMI.org")
+  (deft-find-file "Fluent-Forever/Fluent-Forever.org")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
