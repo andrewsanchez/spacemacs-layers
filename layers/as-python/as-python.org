@@ -1,0 +1,9 @@
+#+PROPERTY:    header-args        :results silent   :eval no-export
+#+PROPERTY:    header-args :tangle config.el
+* Snakemake
+#+BEGIN_SRC elisp
+#+END_SRC
+
+#+RESULTS:
+: t
+ 
