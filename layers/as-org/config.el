@@ -1,3 +1,5 @@
+(require 'org-protocol)
+(add-to-list 'org-modules 'org-protocol)
 (setq as/org (concat (getenv "HOME") "/org/")
       as/agenda (concat as/org "agenda/")
       as/views (concat (getenv "HOME") "/org/views/")
@@ -7,7 +9,7 @@
       org-todo-keywords
       '((sequence "TODO" "|" "DONE"))
       org-refile-targets '((nil :maxlevel . 3)
-                           (org-agenda-files :maxlevel . 2))
+                           (org-agenda-files :maxlevel . 3))
       org-outline-path-complete-in-steps nil
       org-completion-use-ido nil
       org-refile-use-outline-path t)
@@ -46,7 +48,7 @@
         ("a" "Appointment" entry (file+headline as/gtd "Collect")
          "* %? %^G \n  %^t")
         ("b" "Bookmark" entry (file+headline as/gtd "Bookmarks")
-         "* %:annotation\n%u\n\n%i" :empty-lines 1)
+         "* %a\n  %i" :empty-lines 1)
         ("n" "Note" entry (file+headline as/gtd "Notes")
          "* %? %^G\n%U" :empty-lines 1)
         ("j" "Journal" entry (file+datetree "/Users/andrew/org/agenda/journal.org")
@@ -58,53 +60,52 @@
         "/Users/andrew/org/Fluent-Forever/Fluent-Forever.org"))
 (setq org-agenda-include-diary t)
 (setq org-tag-persistent-alist '(("work" . ?w)
-                                  ("buy" . ?b)
-                                  ("sdm" . ??)
-                                  ("X" . ?x)
-                                  ("misc" . ?m)
-                                  ("finance" . ?f)
-                                  ("read" . ?r)
-                                  ("school" . ?s)))
+                                 ("buy" . ?b)
+                                 ("sdm" . ??)
+                                 ("X" . ?x)
+                                 ("misc" . ?m)
+                                 ("finance" . ?f)
+                                 ("read" . ?r)
+                                 ("school" . ?s)))
 
- (defun org-archive-done-tasks-agenda ()
-   (interactive)
-   (org-map-entries
-    (lambda ()
-      (org-archive-subtree)
-      (setq org-map-continue-from (outline-previous-heading))) "/DONE" 'agenda))
+(defun org-archive-done-tasks-agenda ()
+  (interactive)
+  (org-map-entries
+   (lambda ()
+     (org-archive-subtree)
+     (setq org-map-continue-from (outline-previous-heading))) "/DONE" 'agenda))
 
- (defun org-archive-done-tasks-buffer ()
-   (interactive)
-   (org-map-entries
-    (lambda ()
-      (org-archive-subtree)
-      (setq org-map-continue-from (outline-previous-heading))) "/DONE" 'file))
+(defun org-archive-done-tasks-buffer ()
+  (interactive)
+  (org-map-entries
+   (lambda ()
+     (org-archive-subtree)
+    (setq org-map-continue-from (outline-previous-heading))) "/DONE" 'file))
 
-;;  (setq org-agenda-sorting-strategy
-;;        '((agenda timestamp-up category-up priority-down)
-;;          (todo priority-down timestamp-up category-up)
-;;          (tags priority-down timestamp-up category-up)
-;;          (search category-up timestamp-up)))
+(setq org-agenda-sorting-strategy
+      '(deadline-up todo-state-up  timestamp-down priority-down))
 
 (setq org-deadline-warning-days 10)
- (setq org-agenda-custom-commands
-       `(("a" "Current day/week" agenda "" ((org-agenda-span 5)) 
-          (,(concat as/agenda "agenda.ics")
-           ,(concat as/agenda "agenda.html")))
-         ("A" "Agenda" agenda "" ((org-agenda-category-filter-preset '("-habit"))))
-         ("p" "PMI"
-          ((tags-todo "gbqc+TODO=\"TODO\"+category=\"PMI\"") 
-           (tags-todo "ncbitk+TODO=\"TODO\"+category=\"PMI\""))
-          ((org-agenda-overriding-header ""))
-          (,(concat as/org "PMI/PMI-all-todos.org")))
-         ("f" "Fluent Forever"
-          ((tags-todo "category={Fluent Forever}+TODO={TODO\\|WAITING}"))
-          ((org-agenda-overriding-header ""))
-          (,(concat as/org "Fluent-Forever/Fluent-Forever.html")))
-         ("A" "ALL" ((alltodo))
-          ((org-agenda-overriding-header "All")
-           (org-agenda-sorting-strategy '(priority-down)))
-           ,(concat as/agenda "all.html"))))
+(setq org-agenda-custom-commands
+      `(("a" . "Agenda + category")
+        ("aa" "Current agenda without habits" agenda ""
+         ((org-agenda-span 5)
+          (org-agenda-category-filter-preset '("-habit")))
+         (,(concat as/agenda "agenda.ics")
+          ,(concat as/agenda "agenda.html")))
+        ("ap" "PMI Agenda" agenda ""
+         ((org-agenda-span 5)
+          (org-agenda-category-filter-preset '("+PMI")))
+         (,(concat as/org "PMI/PMI_Dev_Plan.html")))
+        ("f" "Fluent Forever"
+         ((tags-todo "category={FluentForever}"))
+         ((org-agenda-overriding-header ""))
+         (,(concat as/org "Fluent-Forever/Fluent-Forever.html")))
+        ("h" "Habits" agenda "" ((org-agenda-category-filter-preset '("+habit"))))
+        ("A" "All TODOs" ((alltodo))
+         ((org-agenda-overriding-header "All TODOs")
+          (org-agenda-sorting-strategy '(priority-down)))
+         ,(concat as/agenda "all.html"))))
 
 (setq 
  org-export-with-toc nil
