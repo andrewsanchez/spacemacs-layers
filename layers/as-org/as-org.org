@@ -1,5 +1,5 @@
-#+PROPERTY:    header-args        :results silent   :eval no-export
-#+PROPERTY:    header-args :tangle config.el
+#+PROPERTY: header-args:elisp :results silent :eval no-export
+#+PROPERTY: header-args :tangle config.el
 
 * General
 #+begin_src elisp
