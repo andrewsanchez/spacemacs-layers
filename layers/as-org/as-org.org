@@ -61,7 +61,7 @@
           ("a" "Appointment" entry (file+headline as/gtd "Collect")
            "* %? %^G \n  %^t")
           ("b" "Bookmark" entry (file+headline as/gtd "Bookmarks")
-           "* %:annotation\n%u\n\n%i" :empty-lines 1)
+           "* %a\n  %i" :empty-lines 1)
           ("n" "Note" entry (file+headline as/gtd "Notes")
            "* %? %^G\n%U" :empty-lines 1)
           ("j" "Journal" entry (file+datetree "/Users/andrew/org/agenda/journal.org")
