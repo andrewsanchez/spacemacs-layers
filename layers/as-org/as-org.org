@@ -3,6 +3,8 @@
 
 * General
 #+begin_src elisp
+  (require 'org-protocol)
+  (add-to-list 'org-modules 'org-protocol)
   (setq as/org (concat (getenv "HOME") "/org/")
         as/agenda (concat as/org "agenda/")
         as/views (concat (getenv "HOME") "/org/views/")
