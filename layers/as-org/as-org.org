@@ -97,11 +97,8 @@
         (org-archive-subtree)
         (setq org-map-continue-from (outline-previous-heading))) "/DONE" 'file))
 
-  ;;  (setq org-agenda-sorting-strategy
-  ;;        '((agenda timestamp-up category-up priority-down)
-  ;;          (todo priority-down timestamp-up category-up)
-  ;;          (tags priority-down timestamp-up category-up)
-  ;;          (search category-up timestamp-up)))
+  (setq org-agenda-sorting-strategy
+        '(deadline-up todo-state-up  timestamp-down priority-down))
 
   (setq org-deadline-warning-days 10)
    (setq org-agenda-custom-commands
