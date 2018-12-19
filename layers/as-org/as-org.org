@@ -101,25 +101,28 @@
         '(deadline-up todo-state-up  timestamp-down priority-down))
 
   (setq org-deadline-warning-days 10)
-   (setq org-agenda-custom-commands
-         `(("a" "Current day/week" agenda "" ((org-agenda-span 5)) 
-            (,(concat as/agenda "agenda.ics")
-             ,(concat as/agenda "agenda.html")))
-           ("A" "Agenda" agenda "" ((org-agenda-category-filter-preset '("-habit"))))
-           ("p" "PMI"
-            ((tags-todo "gbqc+TODO=\"TODO\"+category=\"PMI\"") 
-             (tags-todo "ncbitk+TODO=\"TODO\"+category=\"PMI\""))
-            ((org-agenda-overriding-header ""))
-            (,(concat as/org "PMI/PMI-all-todos.org")))
-           ("f" "Fluent Forever"
-            ((tags-todo "category={Fluent Forever}+TODO={TODO\\|WAITING}"))
-            ((org-agenda-overriding-header ""))
-            (,(concat as/org "Fluent-Forever/Fluent-Forever.html")))
-           ("A" "ALL" ((alltodo))
-            ((org-agenda-overriding-header "All")
-             (org-agenda-sorting-strategy '(priority-down)))
-             ,(concat as/agenda "all.html"))))
+  (setq org-agenda-custom-commands
+        `(("a" . "Agenda + category")
+          ("aa" "Current agenda without habits" agenda ""
+           ((org-agenda-span 5)
+            (org-agenda-category-filter-preset '("-habit")))
+           (,(concat as/agenda "agenda.ics")
+            ,(concat as/agenda "agenda.html")))
+          ("ap" "PMI Agenda" agenda ""
+           ((org-agenda-span 5)
+            (org-agenda-category-filter-preset '("+PMI")))
+           (,(concat as/org "PMI/PMI_Dev_Plan.html")))
+          ("f" "Fluent Forever"
+           ((tags-todo "category={FluentForever}"))
+           ((org-agenda-overriding-header ""))
+           (,(concat as/org "Fluent-Forever/Fluent-Forever.html")))
+          ("h" "Habits" agenda "" ((org-agenda-category-filter-preset '("+habit"))))
+          ("A" "All TODOs" ((alltodo))
+           ((org-agenda-overriding-header "All TODOs")
+            (org-agenda-sorting-strategy '(priority-down)))
+           ,(concat as/agenda "all.html"))))
 #+end_src
+
 * Hydras
 *** Main
 #+begin_src elisp :tangle no
