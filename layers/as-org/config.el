@@ -38,26 +38,25 @@
 
 (setq org-capture-templates
       '(("t" "TODO" entry (file+headline as/gtd "Collect")
-         "* TODO %? %^G \n  %U" :empty-lines 1)
+         "* TODO %? \n  %U" :empty-lines 1)
         ("s" "Scheduled TODO" entry (file+headline as/gtd "Collect")
-         "* TODO %? %^G \nSCHEDULED: %^t\n  %U" :empty-lines 1)
+         "* TODO %? \nSCHEDULED: %^t\n  %U" :empty-lines 1)
         ("d" "Deadline" entry (file+headline as/gtd "Collect")
-         "* TODO %? %^G \n  DEADLINE: %^t" :empty-lines 1)
+         "* TODO %? \n  DEADLINE: %^t" :empty-lines 1)
         ("p" "Priority" entry (file+headline as/gtd "Collect")
-         "* TODO [#A] %? %^G \n  SCHEDULED: %^t")
+         "* TODO [#A] %? \n  SCHEDULED: %^t")
         ("a" "Appointment" entry (file+headline as/gtd "Collect")
-         "* %? %^G \n  %^t")
+         "* %? \n  %^t")
+        ;; Used with capture protocol (chrome bookmarklet)
         ("b" "Bookmark" entry (file+headline as/gtd "Bookmarks")
          "* %a\n  %i" :empty-lines 1)
         ("n" "Note" entry (file+headline as/gtd "Notes")
-         "* %? %^G\n%U" :empty-lines 1)
+         "* %? \n%U" :empty-lines 1)
         ("j" "Journal" entry (file+datetree "/Users/andrew/org/agenda/journal.org")
-        "* %? %^G\nEntered on %U\n")))
+        "* %? \nEntered on %U\n")))
 
 (setq org-agenda-files
-      '("/Users/andrew/org/gtd.org"
-        "/Users/andrew/org/PMI/PMI.org"
-        "/Users/andrew/org/Fluent-Forever/Fluent-Forever.org"))
+      '("/Users/andrew/org/"))
 (setq org-agenda-include-diary t)
 (setq org-tag-persistent-alist '(("work" . ?w)
                                  ("buy" . ?b)
@@ -83,17 +82,18 @@
     (setq org-map-continue-from (outline-previous-heading))) "/DONE" 'file))
 
 (setq org-agenda-sorting-strategy
-      '(deadline-up todo-state-up  timestamp-down priority-down))
+      '(deadline-up todo-state-up timestamp-down priority-down))
 
-(setq org-deadline-warning-days 10)
+(setq org-deadline-warning-days 14)
+(setq org-columns-default-format "%60ITEM(Task) %10Effort(Estimation){:} %28SCHEDULED(Scheduled) %16DEADLINE(Deadline) %5CLOCKSUM(Clocked)")
 (setq org-agenda-custom-commands
-      `(("a" . "Agenda + category")
-        ("aa" "Current agenda without habits" agenda ""
-         ((org-agenda-span 5)
+      `(("." . "Agenda + category")
+        (".a" "Current agenda without habits" agenda ""
+         ((org-agenda-span 14)
           (org-agenda-category-filter-preset '("-habit")))
          (,(concat as/agenda "agenda.ics")
           ,(concat as/agenda "agenda.html")))
-        ("ap" "PMI Agenda" agenda ""
+        (".p" "PMI Agenda" agenda ""
          ((org-agenda-span 5)
           (org-agenda-category-filter-preset '("+PMI")))
          (,(concat as/org "PMI/PMI_Dev_Plan.html")))
@@ -105,29 +105,7 @@
         ("A" "All TODOs" ((alltodo))
          ((org-agenda-overriding-header "All TODOs")
           (org-agenda-sorting-strategy '(priority-down)))
-         ,(concat as/agenda "all.html"))
-        ;; Taken from https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html#org7806649
-        ("P" "Printed agenda"
-         ((agenda "" ((org-agenda-span 7)                      ;; overview of appointments
-                      (org-agenda-start-on-weekday nil)         ;; calendar begins today
-                      (org-agenda-repeating-timestamp-show-all t)
-                      (org-agenda-entry-types '(:timestamp :sexp))))
-          (agenda "" ((org-agenda-span 1)                      ; daily agenda
-                      (org-deadline-warning-days 7)            ; 7 day advanced warning for deadlines
-                      (org-agenda-todo-keyword-format "[ ]")
-                      (org-agenda-scheduled-leaders '("" ""))
-                      (org-agenda-prefix-format "%t%s")))
-          (todo "TODO"                                          ;; todos sorted by context
-                ((org-agenda-prefix-format "[ ] %T: ")
-                 (org-agenda-sorting-strategy '(tag-up priority-down))
-                 (org-agenda-todo-keyword-format "")
-                 (org-agenda-overriding-header "\nTasks by Context\n------------------\n"))))
-         ((org-agenda-with-colors nil)
-          (org-agenda-compact-blocks t)
-          (org-agenda-remove-tags t)
-          (ps-number-of-columns 2)
-           (ps-landscape-mode t))
-         ("~/agenda.ps"))))
+         ,(concat as/agenda "all.html"))))
 
 (setq 
  org-export-with-toc nil
