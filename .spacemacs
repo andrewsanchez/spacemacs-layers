@@ -92,6 +92,8 @@ values."
    ;; This variable has no effect if Emacs is launched with the parameter
    ;; `--insecure' which forces the value of this variable to nil.
    ;; (default t)
+   ;; after copy Ctrl+c in Linux X11, you can paste by `yank' in emacs
+   x-select-enable-clipboard t
    dotspacemacs-elpa-https t
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    dotspacemacs-elpa-timeout 5
