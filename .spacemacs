@@ -54,7 +54,6 @@ values."
      syntax-checking
      version-control
      python
-     ruby
      docker
      vagrant
      terraform
