@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: intention
+# key: intention
+# --
+${1:Behavior} :habit:
+  - ${When}
+  - ${Where}
+  - ${Cue}
+  - ${Accountability}
