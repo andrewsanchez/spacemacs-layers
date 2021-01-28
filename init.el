@@ -326,15 +326,7 @@ you should place your code here."
   (setq projectile-require-project-root nil)
   (setq mermaid-mmdc-location "~/node_modules/.bin/mmdc")
   (setq auto-revert-mode t)
-  (add-hook 'after-init-hook 'org-roam-mode)
-  (slack-register-team
-    :name "qiime2"
-    :default t
-    :client-id "aas229@nau.edu"
-    :client-secret "Detonator-Catsup-Studio5"
-    :token "xoxs-198219724227-645037192578-1644676854996-574b2dfd183816f1c2863918cb24396445d43aaaf5a4ba468d09847bcbc1ab2f"
-    :subscribed-channels '(general caporaso-devs forum))
-  )
+  (add-hook 'after-init-hook 'org-roam-mode))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
