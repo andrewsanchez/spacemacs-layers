@@ -329,6 +329,9 @@ you should place your code here."
   (add-hook 'after-init-hook 'org-roam-mode)
   (setq custom-file "~/.spacemacs.d/custom.el")
   (load custom-file)
+  (setq auth-sources '("~/.authinfo.gpg"))
+  (setenv "GPG_AGENT_INFO" nil)
+  (setq epa-pinentry-mode 'loopback))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
