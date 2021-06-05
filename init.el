@@ -326,7 +326,9 @@ you should place your code here."
   (setq projectile-require-project-root nil)
   (setq mermaid-mmdc-location "~/node_modules/.bin/mmdc")
   (setq auto-revert-mode t)
-  (add-hook 'after-init-hook 'org-roam-mode))
+  (add-hook 'after-init-hook 'org-roam-mode)
+  (setq custom-file "~/.spacemacs.d/custom.el")
+  (load custom-file)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
