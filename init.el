@@ -567,7 +567,8 @@ before packages are loaded."
   (load custom-file)
   (setq auth-sources '("~/.authinfo.gpg"))
   (setenv "GPG_AGENT_INFO" nil)
-  (setq epa-pinentry-mode 'loopback))
+  (setq epa-pinentry-mode 'loopback)
+  (setq magit-git-executable "/usr/local/bin/git"))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
