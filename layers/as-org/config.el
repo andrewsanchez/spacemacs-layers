@@ -78,19 +78,19 @@
          :unnarrowed t)))
 
 (setq org-capture-templates
-      '(("t" "TODO" entry (file+headline as/gtd "Collect")
+      '(("t" "TODO" entry (file+headline as/inbox "Collect")
          "* TODO %? \n  %U" :empty-lines 1)
 
-        ("s" "TODO - Scheduled" entry (file+headline as/gtd "Collect")
+        ("s" "TODO - Scheduled" entry (file+headline as/inbox "Collect")
          "* TODO %? \nSCHEDULED: %^t\n  %U" :empty-lines 1)
 
-        ("d" "TODO - Deadline" entry (file+headline as/gtd "Collect")
+        ("d" "TODO - Deadline" entry (file+headline as/inbox "Collect")
          "* TODO %? \n  DEADLINE: %^t" :empty-lines 1)
 
-        ("a" "Appointment" entry (file+headline as/gtd "Collect")
+        ("a" "Appointment" entry (file+headline as/inbox "Collect")
          "* %? \n  %^t")
 
-        ("n" "Note" entry (file+headline as/gtd "Notes")
+        ("n" "Note" entry (file+headline as/inbox "Notes")
          "* %? \n%U" :empty-lines 1)
 
         ;; ("j" "Journal" entry (file+datetree as/journal)
