@@ -41,27 +41,33 @@
          :file-name "org-roam-dailies/%<%Y-%m-%d>"
          :head "#+title: %<%Y-%m-%d>
 #+roam_tags:daily
-* Priorities
 * Daily Tasks
-** TODO Plan the day
-  SCHEDULED: <%<%Y-%m-%d>>
-** TODO Anki - Process and Review Notes
-  SCHEDULED: <%<%Y-%m-%d>>
-** TODO QIIME 2 Forum
-  SCHEDULED: <%<%Y-%m-%d>>
-* Breaks
-** Coffee
-  SCHEDULED: <%<%Y-%m-%d>>
-** Lunch
-  SCHEDULED: <%<%Y-%m-%d>>
-** Rest
-  SCHEDULED: <%<%Y-%m-%d>>
-* Meetings
-* Exercises
-* Review
-** What worked well?
-** Where did I get stuck?
-** What did I learn?"
+** TODO Plan the day <%<%Y-%m-%d>>
+*** Top priorities
+*** Breaks
+**** Coffee <%<%Y-%m-%d>>
+**** Lunch <%<%Y-%m-%d>>
+**** Rejuvenate <%<%Y-%m-%d>>
+**** Exercise <%<%Y-%m-%d>>
+** TODO Anki - Process and Review <%<%Y-%m-%d>>
+** TODO Process inputs from other entry points [/] <%<%Y-%m-%d>>
+  - [ ] to-doist
+  - [ ] JIRA
+** TODO Power down [/]
+*** Close open loops <%<%Y-%m-%d>>
+  - [ ] org-mode notes
+  - [ ] to-doist
+  - [ ] JIRA
+*** Tomorrow
+    - [ ] Schedule first deep work session
+    - [ ] Fill in small time blocks with small tasks
+*** Review
+**** What worked well?
+**** Where did I get stuck?
+**** What did I learn?
+*** TODO Check-in with James
+    - Questions
+    - Talking points for next meeting"
          )))
 
 (setq org-roam-capture-templates
