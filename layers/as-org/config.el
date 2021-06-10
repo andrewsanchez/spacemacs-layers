@@ -44,8 +44,10 @@
 * Daily Tasks
 ** TODO Plan the day <%<%Y-%m-%d>>
 *** Top priorities
+    - 
+    - 
+    - 
 *** Breaks
-**** Coffee <%<%Y-%m-%d>>
 **** Lunch <%<%Y-%m-%d>>
 **** Rejuvenate <%<%Y-%m-%d>>
 **** Exercise <%<%Y-%m-%d>>
@@ -82,7 +84,7 @@
          "* TODO %? \n  %U" :empty-lines 1)
 
         ("s" "TODO - Scheduled" entry (file+headline as/inbox "Collect")
-         "* TODO %? \nSCHEDULED: %^t\n  %U" :empty-lines 1)
+         "* TODO %? %^t\n  %U" :empty-lines 1)
 
         ("d" "TODO - Deadline" entry (file+headline as/inbox "Collect")
          "* TODO %? \n  DEADLINE: %^t" :empty-lines 1)
