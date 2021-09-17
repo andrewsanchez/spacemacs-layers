@@ -97,11 +97,18 @@
       '(("t" "TODO" entry (file+headline as/inbox "Collect")
          "* TODO %? \n  %U" :empty-lines 1)
 
-        ("s" "TODO - Scheduled" entry (file+headline as/inbox "Collect")
+        ("s" "TODO - Timestamped" entry (file+headline as/inbox "Collect")
          "* TODO %? %^t\n  %U" :empty-lines 1)
 
         ("d" "TODO - Deadline" entry (file+headline as/inbox "Collect")
          "* TODO %? \n  DEADLINE: %^t" :empty-lines 1)
+
+        ("p" "TODO - Project" entry (file+headline as/inbox "Collect")
+         "* TODO %? \n  %U\n  DEADLINE: %^t
+** Links
+** Resources
+** Log
+" :empty-lines 1)
 
         ("a" "Appointment" entry (file+headline as/inbox "Collect")
          "* %? \n  %^t")
@@ -109,12 +116,24 @@
         ("n" "Note" entry (file+headline as/inbox "Notes")
          "* %? \n%U" :empty-lines 1)
 
-        ;; ("j" "Journal" entry (file+datetree as/journal)
-        ;;  "* %? \nEntered on %U\n")
+        ("l" "Log entry" entry (file+olp+datetree as/inbox "Log")
+         "* Log entry: %<[%Y-%m-%d %a %H:%M]>
+- %?Working on
+  Should this be time scoped?
+- Next:
+- Are you clocked in?
+  - Are you actually working on it?
+- Notes for tomorrow?
+- Notes for power down?
+- Anything that can be scheduled?" :empty-lines 1)
 
-      ;; Used with capture protocol Chrome extension
+        ("j" "Journal" entry (file+datetree as/journal)
+         "* %? \nEntered on %U\n")
+
+        ;; Used with capture protocol Chrome extension
         ("p" "Protocol" entry (file+headline as/bookmarks "Collect")
          "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
+
         ("L" "Protocol Link" entry (file+headline as/bookmarks "Inbox")
          "* %? [[%:link][%(transform-square-brackets-to-round-ones \"%:description\")]]\n")))
 
