@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Log entry
+# key: le
+# --
+- Log entry: `(let ((ts (org-insert-time-stamp nil t t ))))`
