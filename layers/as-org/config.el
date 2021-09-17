@@ -170,5 +170,20 @@
           (org-agenda-sorting-strategy '(priority-down)))
          ,(concat as/agenda "all.html"))))
 
+(setq org-agenda-exporter-settings
+      '((org-agenda-add-entry-text-maxlines 12)
+        (htmlize-output-type 'css)))
+
 (setq org-export-with-toc nil
       org-export-with-section-numbers nil)
+
+(setq org-publish-project-alist
+      '(("org"
+         :base-directory "~/org/"
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "~/public_html"
+         :section-numbers nil
+         :table-of-contents nil
+         :style "<link rel=\"stylesheet\"
+                href=\"../other/mystyle.css\"
+                type=\"text/css\"/>")))
