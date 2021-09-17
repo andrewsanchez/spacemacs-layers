@@ -27,7 +27,8 @@
    (use-package anki-editor
      :defer t
      :commands (anki-editor-cloze anki-editor-cloze-dwim anki-editor-cloze-region)
-     :bind ("C-." . anki-editor-mode)))
+     :bind ("C-." . anki-editor-mode)
+     :config (setq anki-editor-create-decks t)))
 
 
 ;;; packages.el ends here
