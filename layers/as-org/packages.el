@@ -10,7 +10,6 @@
 (defun as-org/pre-init-org ()
   (spacemacs|use-package-add-hook org
     :post-config
-    (require 'org-roam-protocol)
     (require 'org-drill)))
 
 (defun as-org/post-init-org ()
