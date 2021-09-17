@@ -40,6 +40,7 @@ This function should only modify configuration layer settings."
      osx
      (org :variables
           org-enable-roam-support t
+          org-enable-roam-protocol t
           org-enable-org-journal-support t
           org-modules '(habits))
      pandoc
