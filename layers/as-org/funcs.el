@@ -38,3 +38,17 @@
 (defun transform-square-brackets-to-round-ones(string-to-transform)
   "Transforms [ into ( and ] into ), other chars left unchanged."
   (concat (mapcar #'(lambda (c) (if (equal c ?\[) ?\( (if (equal c ?\]) ?\) c))) string-to-transform)))
+
+(defun captains-log ()
+  (if (boundp 'org-clocking-p) (org-clocking-p)
+    (progn (org-agenda-clock-goto)
+           (delete-other-windows))
+    (progn (org-agenda-list 1)
+           (delete-other-windows)))
+  (org-agenda-log-mode)
+  (org-agenda-entry-text-mode)
+  (org-agenda-manipulate-query-add)
+  (org-capture nil "l")
+  (split-window-below)
+  (org-roam-dailies-find-today)
+  (other-window 1))
