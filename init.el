@@ -569,6 +569,7 @@ before packages are loaded."
         magit-git-executable "/usr/local/bin/git"
         auto-save-visited-mode t
         projectile-project-search-path '("~/Projects/" "~/anki/" "~/healthvana/"))
+  (add-to-list 'warning-suppress-types '(yasnippet backquote-change))
   (setenv "GPG_AGENT_INFO" nil)
   )
 
