@@ -158,6 +158,13 @@
           (org-overriding-columns-format "%DEADLINE"))
          (,(concat as/agenda "agenda.ics")
           ,(concat as/agenda "agenda.html")))
+        (".l" "Current agenda with log items (inactive timestamps)" agenda ""
+         ((org-agenda-span 7)
+          (org-agenda-category-filter-preset '("-habit"))
+          (org-overriding-columns-format "%DEADLINE")
+          (org-agenda-include-inactive-timestamps t))
+         (,(concat as/agenda "agenda-with-log.md")
+          ,(concat as/agenda "agenda-with-log.html")))
         ("A" "All TODOs" ((alltodo))
          ((org-agenda-overriding-header "All TODOs")
           (org-agenda-sorting-strategy '(priority-down)))
