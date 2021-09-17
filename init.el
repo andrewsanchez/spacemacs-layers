@@ -544,7 +544,6 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
-  (server-start)
   (setq insert-directory-program "/usr/local/Cellar/coreutils/8.32/libexec/gnubin/ls"))
 
 
