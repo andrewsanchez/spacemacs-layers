@@ -39,38 +39,51 @@
       '(("d" "default" entry
          #'org-roam-capture--get-point
          "%?"
-         :file-name "org-roam-dailies/%<%Y-%m-%d>"
+         :file-name "dailies/%<%Y-%m-%d>"
          :head "#+title: %<%Y-%m-%d>
 #+roam_tags:daily
 * Daily Tasks
-** TODO Plan the day <%<%Y-%m-%d>>
-*** Top priorities
-    - 
-    - 
-    - 
+** TODO Power up [/] <%<%Y-%m-%d 09:00>>
+   - [ ] Start pomodoro
+   - [ ] Review/capture top priorities
+   - [ ] Process inputs from other entry points
+     - JIRA
+     - Todoist
+     - Evernote
+   - [ ] Add meetings to agenda
+   - [ ] Plan gym, yoga, etc.
+** Miscellaneous [/]
+  - [ ] Clear downloads folder
+    #+begin_src emacs-lisp
+    (dired \"~/Downloads\")
+    #+end_src
+  - [ ] Process open tabs
 *** Breaks
 **** Lunch <%<%Y-%m-%d>>
 **** Rejuvenate <%<%Y-%m-%d>>
 **** Exercise <%<%Y-%m-%d>>
-** TODO Anki - Process and Review <%<%Y-%m-%d>>
-** TODO Process inputs from other entry points [/] <%<%Y-%m-%d>>
-  - [ ] to-doist
-  - [ ] JIRA
-** TODO Power down [/]
-*** Close open loops <%<%Y-%m-%d>>
-  - [ ] org-mode notes
-  - [ ] to-doist
-  - [ ] JIRA
-*** Tomorrow
-    - [ ] Schedule first deep work session
-    - [ ] Fill in small time blocks with small tasks
-*** Review
-**** What worked well?
-**** Where did I get stuck?
-**** What did I learn?
-*** TODO Check-in with James
-    - Questions
-    - Talking points for next meeting"
+** TODO Anki <%<%Y-%m-%d>>
+** TODO Power down [/] <%<%Y-%m-%d 15:30>>
+   - [ ] Close open loops
+     - org-mode notes
+     - Todoist
+     - JIRA
+   - [ ] Pre-planning for tomorrow
+     - Schedule first deep work session
+     - Fill in small time blocks with small tasks
+   - [ ] Check-in with James
+     - Follow up in current homework
+     - Questions?
+     - Talking points for next meeting?
+** Review
+*** What worked well?
+*** Where did I get stuck?
+*** What did I learn?
+** Log %<%Y-%m-%d>    :log:
+   :PROPERTIES:
+   :CATEGORY: log
+   :END:
+"
          )))
 
 (setq org-roam-capture-templates
