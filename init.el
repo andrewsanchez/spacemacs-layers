@@ -560,16 +560,17 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (setq projectile-require-project-root nil)
-  (setq mermaid-mmdc-location "~/node_modules/.bin/mmdc")
-  (setq auto-revert-mode t)
-  (add-hook 'after-init-hook 'org-roam-mode)
-  (setq custom-file "~/.spacemacs.d/custom.el")
-  (load custom-file)
-  (setq auth-sources '("~/.authinfo.gpg"))
+  (setq projectile-require-project-root nil
+        mermaid-mmdc-location "~/node_modules/.bin/mmdc"
+        auto-revert-mode t
+        custom-file "/dev/null"
+        auth-sources '("~/.authinfo.gpg")
+        epa-pinentry-mode 'loopback
+        magit-git-executable "/usr/local/bin/git"
+        auto-save-visited-mode t
+        projectile-project-search-path '("~/Projects/" "~/anki/" "~/healthvana/"))
   (setenv "GPG_AGENT_INFO" nil)
-  (setq epa-pinentry-mode 'loopback)
-  (setq magit-git-executable "/usr/local/bin/git"))
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
