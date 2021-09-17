@@ -18,6 +18,7 @@
 
 ;; Open org files in same window
 (setq org-link-frame-setup '((file . find-file)))
+(setq org-archive-location "~/Dropbox/org/.archive/%s_archive::datetree/")
 
 (setq org-default-notes-file (concat as/org "notes.org")
       org-hide-leading-stars t
