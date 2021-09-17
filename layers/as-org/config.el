@@ -16,8 +16,6 @@
     (message "%s added to agenda." buffer-file-name)))
 (add-hook 'after-save-hook #'as/add-new-org-files-to-agenda)
 
-;; Open org files in same window
-(setq org-link-frame-setup '((file . find-file)))
 (setq org-archive-location "~/Dropbox/org/.archive/%s_archive::datetree/")
 
 (setq org-default-notes-file (concat as/org "notes.org")
@@ -29,9 +27,15 @@
       org-outline-path-complete-in-steps nil
       org-refile-allow-creating-parent-nodes 'confirm
       org-completion-use-ido nil
-      org-refile-use-outline-path 'file)
+      org-refile-use-outline-path nil
+      ;; Open org files in same window
+      org-link-frame-setup '((file . find-file))
+      org-agenda-entry-text-maxlines 12
+      org-agenda-start-with-log-mode t
+      org-agenda-start-with-entry-text-mode nil
+      )
 
-(setq org-roam-directory as/org
+(setq org-roam-directory (concat as/org "roam")
       org-roam-db-location (concat as/org ".roam/" "org-roam.db")
       org-roam-dailies-directory as/dailies
       org-journal-dir as/journal)
