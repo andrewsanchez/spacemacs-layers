@@ -4,7 +4,8 @@
       as/inbox (concat as/org "inbox.org")
       as/journal (concat as/org "journal/")
       as/bookmarks (concat as/org "bookmarks.org")
-      as/dailies (concat as/org "org-roam-dailies/")
+      as/roam (concat as/org "roam/")
+      as/dailies (concat as/roam "dailies/")
       org-directory as/org)
 
 
@@ -31,7 +32,7 @@
 
 (setq org-roam-directory as/org
       org-roam-db-location (concat as/org ".roam/" "org-roam.db")
-      org-roam-dailies-directory (concat as/org "org-roam-dailies/")
+      org-roam-dailies-directory as/dailies
       org-journal-dir as/journal)
 
 (setq org-roam-dailies-capture-templates
