@@ -11,8 +11,9 @@ This function should only modify configuration layer settings."
    dotspacemacs-ask-for-lazy-installation t
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
-   '(windows-scripts
-   '(react
+   '(
+     windows-scripts
+     react
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t)
      autohotkey
@@ -64,12 +65,15 @@ This function should only modify configuration layer settings."
      ;; Personal layers
      as-org
      anki)
-   dotspacemacs-additional-packages '(magit-section
-                                      helm-rg
-                                      mermaid-mode)
+   dotspacemacs-additional-packages
+   '(
+     ;; magit-section
+     helm-rg
+     mermaid-mode)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '()
-   dotspacemacs-install-packages 'used-only)))
+   dotspacemacs-install-packages 'used-only)
+  )
 
 (defun dotspacemacs/init ()
   "Initialization:
@@ -210,7 +214,11 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (setq insert-directory-program "/usr/local/Cellar/coreutils/8.32/libexec/gnubin/ls"))
+  (setq
+   insert-directory-program "/usr/local/Cellar/coreutils/8.32/libexec/gnubin/ls"
+   org-roam-v2-ack t)
+  )
+
 
 
 (defun dotspacemacs/user-load ()
