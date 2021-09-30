@@ -35,8 +35,8 @@
       org-agenda-start-with-entry-text-mode nil
       )
 
-(setq org-roam-directory (concat as/org "roam")
-      org-roam-db-location (concat as/org ".roam/" "org-roam.db")
+(setq org-roam-directory as/roam
+      org-roam-db-location (concat as/roam ".roam.db")
       org-roam-dailies-directory as/dailies
       org-journal-dir as/journal)
 
