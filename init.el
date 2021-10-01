@@ -240,9 +240,13 @@ before packages are loaded."
         epa-pinentry-mode 'loopback
         magit-git-executable "/usr/local/bin/git"
         auto-save-visited-mode t
-        projectile-project-search-path '("~/Projects/" "~/anki/" "~/healthvana/"))
+        projectile-project-search-path '("~/Projects/" "~/anki/" "~/healthvana/")
+        fill-column 80)
+
   (add-to-list 'warning-suppress-types '(yasnippet backquote-change))
-  (setenv "GPG_AGENT_INFO" nil))
+  (setenv "GPG_AGENT_INFO" nil)
+  (org-roam-db-autosync-mode)
+  (add-hook 'org-mode-hook #'auto-fill-mode))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
