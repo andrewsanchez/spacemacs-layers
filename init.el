@@ -214,11 +214,8 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (setq
-   insert-directory-program "/usr/local/Cellar/coreutils/8.32/libexec/gnubin/ls"
-   org-roam-v2-ack t
-   org-roam-db-autosync-mode)
-  )
+  (setq insert-directory-program "/usr/local/Cellar/coreutils/8.32/libexec/gnubin/ls"
+        org-roam-v2-ack t))
 
 
 
