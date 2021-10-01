@@ -138,7 +138,7 @@
         ("L" "Protocol Link" entry (file+headline as/bookmarks "Inbox")
          "* %? [[%:link][%(transform-square-brackets-to-round-ones \"%:description\")]]\n")))
 
-(setq org-agenda-files (directory-files-recursively as/org "\\.org$"))
+(setq org-agenda-files (directory-files-recursively as/roam "\\.org$"))
 (setq org-agenda-include-diary t)
 (setq org-tag-persistent-alist '(("work" . ?w)
                                  ("buy" . ?b)
