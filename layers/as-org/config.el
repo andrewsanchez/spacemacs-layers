@@ -94,6 +94,11 @@
         (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}")
         :unnarrowed t)))
 
+(setq org-roam-capture-ref-templates
+      '(("r" "default" plain "%?" :target
+         (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}")
+         :unnarrowed t)))
+
 (setq org-capture-templates
       '(("t" "TODO" entry (file+headline as/inbox "Collect")
          "* TODO %? \n  %U" :empty-lines 1)
