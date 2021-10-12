@@ -120,18 +120,19 @@
 
         ("l" "Log entry" entry (file+olp+datetree as/inbox "Log")
          "* Log entry: %<[%Y-%m-%d %a %H:%M]>
-** Currently:
-   - %?
-   - [ ] Scope hammer?
-** Next
-** Reflect
+- Currently:
+  - %?
+  - [ ] Scope hammer?
+- Next
+- Reflect
   - Are you clocked in and focused?
   - Any notes you can capture (for tomorrow, power-down, etc)?
   - Anything you can schedule?
   - Do you need a break?
   - Do you need a context change?
-** Actions
+- Actions
   - [ ] Exercise/stretch
+  - [ ] Listen to or record a glimpse
 " :empty-lines 1)
 
         ("j" "Journal" entry (file+datetree as/journal)
