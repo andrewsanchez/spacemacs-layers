@@ -22,7 +22,7 @@
       org-hide-leading-stars t
       org-todo-keywords
       '((sequence "TODO(t)" "WAITING(w)" "NEXT(n)" "MAYBE(m)" "|" "DONE(d)" "CANCELLED(c)"))
-      org-refile-targets '((nil :maxlevel . 2)
+      org-refile-targets '((nil :maxlevel . 3)
                            (org-agenda-files :maxlevel . 3))
       org-outline-path-complete-in-steps nil
       org-refile-allow-creating-parent-nodes 'confirm
