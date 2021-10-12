@@ -106,8 +106,9 @@
 
         ("p" "TODO - Project" entry (file+headline as/inbox "Collect")
          "* TODO %? \n  %U\n  DEADLINE: %^t
-** Links
+** Notes
 ** Resources
+** Meetings
 ** Log
 " :empty-lines 1)
 
