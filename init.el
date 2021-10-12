@@ -69,7 +69,8 @@ This function should only modify configuration layer settings."
    '(
      ;; magit-section
      helm-rg
-     mermaid-mode)
+     mermaid-mode
+     groovy-mode)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '()
    dotspacemacs-install-packages 'used-only)
