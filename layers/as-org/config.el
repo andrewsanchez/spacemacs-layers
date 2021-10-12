@@ -55,18 +55,13 @@
      - Todoist
      - Evernote
    - [ ] Add meetings to agenda
-   - [ ] Plan gym, yoga, etc.
+   - [ ] Plan breaks, (lunch, exercise, practice, meditation, etc.)
 ** Miscellaneous [/]
   - [ ] Clear downloads folder
     #+begin_src emacs-lisp
     (dired \"~/Downloads\")
     #+end_src
   - [ ] Process open tabs
-*** Breaks
-**** Lunch <%<%Y-%m-%d>>
-**** Rejuvenate <%<%Y-%m-%d>>
-**** Exercise <%<%Y-%m-%d>>
-** TODO Anki <%<%Y-%m-%d>>
 ** TODO Power down [/] <%<%Y-%m-%d 15:30>>
    - [ ] Close open loops
      - org-mode notes
