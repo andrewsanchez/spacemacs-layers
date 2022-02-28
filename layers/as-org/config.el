@@ -77,25 +77,26 @@
 ** Review
 *** What worked well?
 *** Where did I get stuck?
-*** What did I learn?
-** Log %<%Y-%m-%d>    :log:
-   :PROPERTIES:
-   :CATEGORY: log
-   :END:"
+*** What did I learn?"
 ))))
 
 (setq org-roam-capture-templates
-      '(("d" "default" plain "%?" :target
-        (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}")
+      '(("d" "default" plain "%?"
+         :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                            "#+title: ${title}\n")
         :unnarrowed t)))
 
 (setq org-roam-capture-ref-templates
-      '(("r" "default" plain "%?" :target
-         (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}")
+      '(("r" "default" plain "%?"
+         :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                            "#+title: ${title}\n")
          :unnarrowed t)))
 
 (setq org-capture-templates
       '(("t" "TODO" entry (file+headline as/inbox "Collect")
+         "* TODO %? \n  %U" :empty-lines 1)
+
+        ("b" "TODO" entry (file+headline as/inbox "Backlog")
          "* TODO %? \n  %U" :empty-lines 1)
 
         ("s" "TODO - Timestamped" entry (file+headline as/inbox "Collect")
@@ -113,7 +114,7 @@
 " :empty-lines 1)
 
         ("a" "Appointment" entry (file+headline as/inbox "Collect")
-         "* %? \n  %^t")
+         "* %? %^t\n** Agenda\n")
 
         ("n" "Note" entry (file+headline as/inbox "Notes")
          "* %? \n%U" :empty-lines 1)

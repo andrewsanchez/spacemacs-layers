@@ -43,7 +43,9 @@ This function should only modify configuration layer settings."
           org-enable-roam-support t
           org-enable-roam-protocol t
           org-enable-org-journal-support t
-          org-modules '(habits))
+          org-modules '(habits)
+          org-enable-notifications t
+          org-start-notification-daemon-on-startup t)
      pandoc
      protobuf
      python
@@ -237,11 +239,12 @@ before packages are loaded."
         mermaid-mmdc-location "~/node_modules/.bin/mmdc"
         auto-revert-mode t
         custom-file "/dev/null"
-        auth-sources '("~/.authinfo.gpg")
+        auth-sources '("~/.authinfo")
         epa-pinentry-mode 'loopback
         magit-git-executable "/usr/local/bin/git"
+
         auto-save-visited-mode t
-        projectile-project-search-path '("~/Projects/" "~/anki/" "~/healthvana/")
+        projectile-project-search-path '("~/Projects/" "~/anki/" "~/healthvana/" "~/Projects/anki_addons")
         fill-column 80)
 
   (add-to-list 'warning-suppress-types '(yasnippet backquote-change))

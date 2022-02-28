@@ -1,6 +1,5 @@
 (defconst as-org-packages
-  '(org
-    org-drill))
+  '(org org-drill))
 
 (defun as-org/init-org-drill ()
   (use-package org-drill
@@ -13,5 +12,4 @@
     (require 'org-drill)))
 
 (defun as-org/post-init-org ()
-  (add-to-list 'org-modules 'org-protocol)
   (add-to-list 'org-modules 'org-habit))
