@@ -250,6 +250,7 @@ before packages are loaded."
   (add-to-list 'warning-suppress-types '(yasnippet backquote-change))
   (setenv "GPG_AGENT_INFO" nil)
   (org-roam-db-autosync-mode)
+  (require 'org-roam-protocol)
   (add-hook 'org-mode-hook #'auto-fill-mode))
 
 ;; Do not write anything past this comment. This is where Emacs will
