@@ -1,0 +1,4 @@
+# key: story
+# name: story
+# --
+I am a *${1:user}* who wants to *${2:action}* so that I can *${3:goal}*.
