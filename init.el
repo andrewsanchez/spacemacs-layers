@@ -245,7 +245,8 @@ before packages are loaded."
 
         auto-save-visited-mode t
         projectile-project-search-path '("~/Projects/" "~/anki/" "~/healthvana/" "~/Projects/anki_addons")
-        fill-column 80)
+        fill-column 80
+        require-final-newline t)
 
   (add-to-list 'warning-suppress-types '(yasnippet backquote-change))
   (setenv "GPG_AGENT_INFO" nil)
