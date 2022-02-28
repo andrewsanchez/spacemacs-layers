@@ -89,7 +89,11 @@
 (setq org-roam-capture-ref-templates
       '(("r" "default" plain "%?"
          :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-                            "#+title: ${title}\n")
+                            "#+title: ${title}\n\n${body}")
+         :unnarrowed t)
+
+        ("e" "entry" entry "* %? ${title}"
+         :target (file+olp "~/Dropbox/org/roam/inbox.org" ("Collect"))
          :unnarrowed t)))
 
 (setq org-capture-templates
