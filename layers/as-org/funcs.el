@@ -43,7 +43,7 @@
   (if (boundp 'org-clocking-p) (org-clocking-p)
     (progn (org-agenda-clock-goto)
            (delete-other-windows))
-    (progn (org-agenda-list 1)
+    (progn (org-agenda-list)
            (delete-other-windows)))
   (org-agenda-log-mode)
   (org-agenda-entry-text-mode)
