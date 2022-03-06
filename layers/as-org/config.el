@@ -83,7 +83,7 @@
 (setq org-roam-capture-templates
       '(("d" "default" plain "%?"
          :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-                            "#+title: ${title}\n")
+                            "#+title: ${title}\n\n* ${title}")
         :unnarrowed t)))
 
 (setq org-roam-capture-ref-templates
