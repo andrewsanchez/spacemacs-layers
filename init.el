@@ -252,8 +252,9 @@ before packages are loaded."
   (setenv "GPG_AGENT_INFO" nil)
   (org-roam-db-autosync-mode)
   (require 'org-roam-protocol)
-  (add-hook 'org-mode-hook #'auto-fill-mode))
-
+  (add-hook 'org-mode-hook #'auto-fill-mode)
+  ;; May be necessary if running into problems with org-batch-store-agenda-views
+  (org-reload))
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (defun dotspacemacs/emacs-custom-settings ()
