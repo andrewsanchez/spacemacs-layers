@@ -144,7 +144,7 @@
          "* %? \nEntered on %U\n")
 
         ;; Used with capture protocol Chrome extension
-        ("p" "Protocol" entry (file+headline as/bookmarks "Collect")
+        ("P" "Protocol" entry (file+headline as/bookmarks "Collect")
          "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
 
         ("L" "Protocol Link" entry (file+headline as/bookmarks "Inbox")
