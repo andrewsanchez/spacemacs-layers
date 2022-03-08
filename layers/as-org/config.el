@@ -36,7 +36,7 @@
       )
 
 (setq org-roam-directory as/roam
-      org-roam-db-location (concat as/roam ".roam.db")
+      org-roam-db-location "~/.roam.db"
       org-roam-dailies-directory as/dailies
       org-journal-dir as/journal)
 
