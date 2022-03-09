@@ -164,7 +164,8 @@
 (setq org-deadline-warning-days 14)
 (setq org-columns-default-format "%30ITEM(Task) %5Effort(Estimation){:} %30SCHEDULED(Scheduled) %35TIMESTAMP(Timestamp) %35DEADLINE(Deadline) %5CLOCKSUM(Clocked)")
 (setq org-agenda-custom-commands
-      `(("." . "Agenda + category")
+      `(("b" tags-todo "-backlog")
+        ("." . "Agenda + category")
         (".a" "Current agenda without habits" agenda ""
          ((org-agenda-span 14)
           (org-agenda-category-filter-preset '("-habit"))
@@ -177,11 +178,7 @@
           (org-overriding-columns-format "%DEADLINE")
           (org-agenda-include-inactive-timestamps t))
          (,(concat as/agenda "agenda-with-log.md")
-          ,(concat as/agenda "agenda-with-log.html")))
-        ("A" "All TODOs" ((alltodo))
-         ((org-agenda-overriding-header "All TODOs")
-          (org-agenda-sorting-strategy '(priority-down)))
-         ,(concat as/agenda "all.html"))))
+          ,(concat as/agenda "agenda-with-log.html")))))
 
 (setq org-agenda-exporter-settings
       '((org-agenda-add-entry-text-maxlines 12)
