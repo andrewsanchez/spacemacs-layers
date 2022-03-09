@@ -47,7 +47,7 @@
                             "#+title: %<%Y-%m-%d>
 #+roam_tags:daily
 * Daily Tasks
-** TODO Power up [/] <%<%Y-%m-%d 09:00>>
+** Power up [/]
    - [ ] Start pomodoro
    - [ ] Review/capture top priorities
    - [ ] Process inputs from other entry points
@@ -62,7 +62,7 @@
     (dired \"~/Downloads\")
     #+end_src
   - [ ] Process open tabs
-** TODO Power down [/] <%<%Y-%m-%d 15:30>>
+** Power down [/]
    - [ ] Close open loops
      - org-mode notes
      - Todoist
