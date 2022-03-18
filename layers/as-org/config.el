@@ -124,11 +124,10 @@
          "* %? \n%U" :empty-lines 1)
 
         ("l" "Log entry" entry (file+olp+datetree as/inbox "Log")
-         "* Log entry: %<[%Y-%m-%d %a %H:%M]>
-- Currently:
-  - %?
-  - [ ] Scope hammer?
-- Next
+         "* %?
+%<[%Y-%m-%d %a %H:%M]>
+- Scope hammer?
+- What's next?
 - Reflect
   - Are you clocked in and focused?
   - Any notes you can capture (for tomorrow, power-down, etc)?
