@@ -100,8 +100,8 @@
       '(("t" "TODO" entry (file+headline as/inbox "Collect")
          "* TODO %? \n  %U" :empty-lines 1)
 
-        ("b" "TODO" entry (file+headline as/inbox "Backlog")
-         "* TODO %? \n  %U" :empty-lines 1)
+        ("b" "TODO - Backlog" entry (file+headline as/inbox "Backlog")
+         "* TODO %? :backlog:\n  %U" :empty-lines 1)
 
         ("s" "TODO - Timestamped" entry (file+headline as/inbox "Collect")
          "* TODO %? %^t\n  %U" :empty-lines 1)
