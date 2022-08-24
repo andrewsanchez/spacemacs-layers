@@ -45,7 +45,8 @@ This function should only modify configuration layer settings."
           org-enable-org-journal-support t
           org-modules '(habits)
           org-enable-notifications t
-          org-start-notification-daemon-on-startup t)
+          org-start-notification-daemon-on-startup t
+          org-archive-subtree-save-file-p t)
      pandoc
      protobuf
      python
