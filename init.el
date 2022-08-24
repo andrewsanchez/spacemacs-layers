@@ -239,7 +239,6 @@ before packages are loaded."
         mermaid-mmdc-location "~/node_modules/.bin/mmdc"
         auto-revert-mode t
         custom-file "/dev/null"
-        auth-sources '("~/.authinfo")
         epa-pinentry-mode 'loopback
         magit-git-executable "/usr/local/bin/git"
 
