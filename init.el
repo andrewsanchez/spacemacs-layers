@@ -110,8 +110,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-scratch-buffer-persistent t
    dotspacemacs-scratch-buffer-unkillable t
    dotspacemacs-initial-scratch-message nil
-   dotspacemacs-themes '(solarized-light
-                         solarized-dark)
+   dotspacemacs-themes '(solarized-dark
+                         solarized-light)
    dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
