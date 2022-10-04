@@ -84,7 +84,12 @@
       '(("d" "default" plain "%?"
          :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}\n\n* ${title}")
-        :unnarrowed t)))
+        :unnarrowed t)
+
+      ("s" "school" plain (file "~/Dropbox/org/roam/CIT/templates/cit.org")
+       :target (file+head "CIT/%<%Y%m%d%H%M%S>-${slug}.org"
+                          "#+title: ${title}\n") :unnarrowed t)
+      ))
 
 (setq org-roam-capture-ref-templates
       '(("r" "default" plain "%?"
