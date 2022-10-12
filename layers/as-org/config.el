@@ -1,12 +1,11 @@
-(setq as/org (concat (getenv "HOME") "/Dropbox/org/"/
-      as/org-templates (concat as/org "templates/")
-      as/agenda (concat as/org "agenda/")
-      as/views (concat as/org "views/")
-      as/roam (concat as/org "roam/")
+(setq org-directory (concat (getenv "HOME") "/Dropbox/org/")
+      as/org-templates (concat org-directory "templates/")
+      as/agenda (concat org-directory "agenda/")
+      as/views (concat org-directory "views/")
+      as/roam (concat org-directory "roam/")
       as/inbox (concat as/roam "inbox.org")
       as/dailies (concat as/roam "dailies/")
       as/bookmarks (concat as/roam "bookmarks.org")
-      org-directory as/org
       as/journal (concat as/roam "journal/"))
 
 
@@ -19,7 +18,7 @@
 
 (setq org-archive-location "~/Dropbox/org/.archive/%s_archive::datetree/")
 
-(setq org-default-notes-file (concat as/org "notes.org")
+(setq org-default-notes-file (concat org-directory "notes.org")
       org-hide-leading-stars t
       org-todo-keywords
       '((sequence "TODO(t)" "WAITING(w)" "NEXT(n)" "MAYBE(m)" "|" "DONE(d)" "CANCELLED(c)"))
