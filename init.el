@@ -17,6 +17,22 @@ This function should only modify configuration layer settings."
                       auto-completion-enable-snippets-in-popup t)
      autohotkey
      better-defaults
+     (bibtex :variables
+             bibtex-completion-bibliography '("~/Dropbox/org/refs/refs.bib")
+             bibtex-completion-library-path "~/Dropbox/org/refs/"
+             bibtex-completion-notes-path "~/Dropbox/org/"
+             ;; Taken from https://github.com/jkitchin/org-ref#configuration
+             bibtex-autokey-year-length 4
+             bibtex-autokey-name-year-separator "-"
+             bibtex-autokey-year-title-separator "-"
+             bibtex-autokey-titleword-separator "-"
+             bibtex-autokey-titlewords 2
+             bibtex-autokey-titlewords-stretch 1
+             bibtex-autokey-titleword-length 5
+             bibtex-completion-pdf-open-function
+	           (lambda (fpath)
+	             (call-process "open" nil 0 nil fpath))
+             )
      csv
      (deft :variables
        deft-default-extension "org"
@@ -253,7 +269,9 @@ before packages are loaded."
   (require 'org-roam-protocol)
   (add-hook 'org-mode-hook #'auto-fill-mode)
   ;; May be necessary if running into problems with org-batch-store-agenda-views
-  (org-reload))
+  (org-reload)
+  ;; org-ref magic to export to other formats.
+  (add-hook 'org-export-before-parsing-hook 'org-ref-csl-preprocess-buffer))
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (defun dotspacemacs/emacs-custom-settings ()
