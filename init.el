@@ -12,7 +12,6 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
    '(vimscript
-     windows-scripts
      react
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t)
