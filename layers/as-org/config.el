@@ -1,12 +1,13 @@
-(setq as/org (concat (getenv "HOME") "/Dropbox/org/")
+(setq as/org (concat (getenv "HOME") "/Dropbox/org/"/
+      as/org-templates (concat as/org "templates/")
       as/agenda (concat as/org "agenda/")
       as/views (concat as/org "views/")
       as/roam (concat as/org "roam/")
       as/inbox (concat as/roam "inbox.org")
       as/dailies (concat as/roam "dailies/")
       as/bookmarks (concat as/roam "bookmarks.org")
-      as/journal (concat as/roam "journal/")
-      org-directory as/org)
+      org-directory as/org
+      as/journal (concat as/roam "journal/"))
 
 
 (defun as/add-new-org-files-to-agenda ()
@@ -109,7 +110,7 @@
          "* TODO %? %^t\n  %U" :empty-lines 1)
 
         ("b" "Timeblock" entry (file+olp+datetree as/inbox "Planning")
-         "* %? %^t" :time-prompt t :empty-lines 1)
+         (file "templates/timeblock.org") :time-prompt t :empty-lines 1)
 
         ("B" "TODO - Backlog" entry (file+headline as/inbox "Backlog")
          "* TODO %? :backlog:\n  %U" :empty-lines 1)
