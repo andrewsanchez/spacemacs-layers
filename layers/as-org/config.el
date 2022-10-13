@@ -41,44 +41,10 @@
       org-journal-dir as/journal)
 
 (setq org-roam-dailies-capture-templates
-      '(("d" "default" entry
-         "* %?"
-         :target (file+head "%<%Y-%m-%d>.org"
-                            "#+title: %<%Y-%m-%d>
-#+roam_tags:daily
-* Daily Tasks
-** Power up [/]
-   - [ ] Start pomodoro
-   - [ ] Review/capture top priorities
-   - [ ] Process inputs from other entry points
-     - JIRA
-     - Todoist
-     - Evernote
-   - [ ] Add meetings to agenda
-   - [ ] Plan breaks, (lunch, exercise, practice, meditation, etc.)
-** Miscellaneous [/]
-  - [ ] Clear downloads folder
-    #+begin_src emacs-lisp
-    (dired \"~/Downloads\")
-    #+end_src
-  - [ ] Process open tabs
-** Power down [/]
-   - [ ] Close open loops
-     - org-mode notes
-     - Todoist
-     - JIRA
-   - [ ] Pre-planning for tomorrow
-     - Schedule first deep work session
-     - Fill in small time blocks with small tasks
-   - [ ] Check-in with James
-     - Follow up in current homework
-     - Questions?
-     - Talking points for next meeting?
-** Review
-*** What worked well?
-*** Where did I get stuck?
-*** What did I learn?"
-))))
+      '(("d" "default" entry "* %?"
+         :if-new (file+head "%<%Y-%m-%d>.org"
+                            "%[~/Dropbox/org/templates/daily.org]")
+         :unnarrowed t)))
 
 (setq org-roam-capture-templates
       '(("d" "default" plain "%?"
