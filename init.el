@@ -47,7 +47,6 @@ This function should only modify configuration layer settings."
      docker
      emacs-lisp
      git
-     github
      helm
      html
      javascript
