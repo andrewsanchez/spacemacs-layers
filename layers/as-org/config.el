@@ -137,7 +137,7 @@
                                  ("school" . ?s)))
 
 (setq org-deadline-warning-days 14)
-(setq org-columns-default-format "%30ITEM(Task) %5Effort(Estimation){:} %30SCHEDULED(Scheduled) %35TIMESTAMP(Timestamp) %35DEADLINE(Deadline) %5CLOCKSUM(Clocked)")
+(setq org-columns-default-format "%30ITEM(Task) %4Effort(Effort){:} %16SCHEDULED(Scheduled) %30TIMESTAMP(Timestamp) %10DEADLINE(Deadline) %5CLOCKSUM(Clocked)")
 (setq org-agenda-custom-commands
       `(("b" tags-todo "-backlog")
         ("." . "Agenda + category")
