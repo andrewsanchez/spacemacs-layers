@@ -4,10 +4,10 @@
       as/views (concat org-directory "views/")
       as/roam (concat org-directory "roam/")
       as/inbox (concat as/roam "inbox.org")
+      as/log (concat org-directory "log.org")
       as/dailies (concat as/roam "dailies/")
       as/bookmarks (concat as/roam "bookmarks.org")
       as/journal (concat as/roam "journal/"))
-
 
 (defun as/add-new-org-files-to-agenda ()
   "If the current file is in 'as/config, tangle blocks"
@@ -69,22 +69,22 @@
 
 (setq org-capture-templates
       '(("t" "TODO" entry (file+headline as/inbox "Collect")
-         "* TODO %? \n  %U" :empty-lines 1)
+         "* TODO %?\n:PROPERTIES:\n:CAPTURED: %U\n:END:" :empty-lines 1)
 
-        ("s" "TODO - Timestamped" entry (file+headline as/inbox "Collect")
-         "* TODO %? %^t\n  %U" :empty-lines 1)
+        ("s" "TODO - Scheduled" entry (file+headline as/inbox "Collect")
+         "* TODO %?\n:PROPERTIES:\n:CAPTURED: %U\n:END:\nSCHEDULED: %^t" :empty-lines 1)
 
-        ("b" "Timeblock" entry (file+olp+datetree as/inbox "Planning")
-         (file "templates/timeblock.org") :time-prompt t :empty-lines 1)
-
-        ("B" "TODO - Backlog" entry (file+headline as/inbox "Backlog")
-         "* TODO %? :backlog:\n  %U" :empty-lines 1)
+        ("S" "TODO - Timestamped" entry (file+headline as/inbox "Collect")
+         "* TODO %?\n:PROPERTIES:\n:CAPTURED: %U\n:END:\n%^t" :empty-lines 1)
 
         ("d" "TODO - Deadline" entry (file+headline as/inbox "Collect")
-         "* TODO %? \n  DEADLINE: %^t" :empty-lines 1)
+         "* TODO %? \n:PROPERTIES:\n:CAPTURED: %U\n:END:\nDEADLINE: %^t" :empty-lines 1)
+
+        ("b" "Timeblock" entry (file+olp+datetree as/inbox "Planning")
+         (file "~/Dropbox/org/templates/timeblock.org") :time-prompt t :empty-lines 1)
 
         ("p" "TODO - Project" entry (file+headline as/inbox "Collect")
-         "* TODO %? \n  %U\n  DEADLINE: %^t
+         "* TODO %? \n:PROPERTIES:\n:CAPTURED: %U\n:END:\nDEADLINE: %^t
 ** Notes
 ** Resources
 ** Meetings
@@ -97,9 +97,10 @@
         ("n" "Note" entry (file+headline as/inbox "Notes")
          "* %? \n%U" :empty-lines 1)
 
-        ("l" "Log entry" entry (file+olp+datetree as/inbox "Log")
-         "* %?
-%<[%Y-%m-%d %a %H:%M]>
+        ("l" "Log entry" entry (file+datetree as/log)
+         "* Log entry %<[%Y-%m-%d %a %H:%M]>
+** What are you working on?
+** Reflect
 - Scope hammer?
 - What's next?
 - Reflect
