@@ -269,7 +269,8 @@ before packages are loaded."
   ;; May be necessary if running into problems with org-batch-store-agenda-views
   (org-reload)
   ;; org-ref magic to export to other formats.
-  (add-hook 'org-export-before-parsing-hook 'org-ref-csl-preprocess-buffer))
+  (add-hook 'org-export-before-parsing-hook 'org-ref-csl-preprocess-buffer)
+  (menu-bar-mode -1))
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (defun dotspacemacs/emacs-custom-settings ()
