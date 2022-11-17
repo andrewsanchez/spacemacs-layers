@@ -159,9 +159,6 @@
       '((org-agenda-add-entry-text-maxlines 12)
         (htmlize-output-type 'css)))
 
-(setq org-export-with-toc nil
-      org-export-with-section-numbers nil)
-
 (setq org-publish-project-alist
       '(("org"
          :base-directory "~/org/"
@@ -172,3 +169,9 @@
          :style "<link rel=\"stylesheet\"
                 href=\"../other/mystyle.css\"
                 type=\"text/css\"/>")))
+
+(setq org-export-with-toc nil
+      org-export-with-section-numbers nil
+      org-log-into-drawer nil
+      org-agenda-columns-add-appointments-to-effort-sum t
+      org-agenda-default-appointment-duration 30)
