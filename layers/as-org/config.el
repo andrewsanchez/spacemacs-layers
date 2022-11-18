@@ -72,19 +72,19 @@
          "* TODO %?\n:PROPERTIES:\n:CAPTURED: %U\n:END:" :empty-lines 1)
 
         ("s" "TODO - Scheduled" entry (file+headline as/inbox "Collect")
-         "* TODO %?\n:PROPERTIES:\n:CAPTURED: %U\n:END:\nSCHEDULED: %^t" :empty-lines 1)
+         "* TODO %?\nSCHEDULED: %^t\n:PROPERTIES:\n:CAPTURED: %U\n:END:" :empty-lines 1)
 
         ("S" "TODO - Timestamped" entry (file+headline as/inbox "Collect")
          "* TODO %?\n:PROPERTIES:\n:CAPTURED: %U\n:END:\n%^t" :empty-lines 1)
 
         ("d" "TODO - Deadline" entry (file+headline as/inbox "Collect")
-         "* TODO %? \n:PROPERTIES:\n:CAPTURED: %U\n:END:\nDEADLINE: %^t" :empty-lines 1)
+         "* TODO %?\nDEADLINE: %^t\n:PROPERTIES:\n:CAPTURED: %U\n:END:" :empty-lines 1)
 
         ("b" "Timeblock" entry (file+olp+datetree as/inbox "Planning")
          (file "~/Dropbox/org/templates/timeblock.org") :time-prompt t :empty-lines 1)
 
         ("p" "TODO - Project" entry (file+headline as/inbox "Collect")
-         "* TODO %? \n:PROPERTIES:\n:CAPTURED: %U\n:END:\nDEADLINE: %^t
+         "* TODO %?\nDEADLINE: %^t\n:PROPERTIES:\n:CAPTURED: %U\n:END:
 ** Notes
 ** Resources
 ** Meetings
