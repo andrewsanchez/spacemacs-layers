@@ -254,7 +254,7 @@ before packages are loaded."
         auto-revert-mode t
         custom-file "/dev/null"
         epa-pinentry-mode 'loopback
-        magit-git-executable "/usr/local/bin/git"
+        magit-git-executable "/opt/homebrew/bin/git"
 
         auto-save-visited-mode t
         projectile-project-search-path '("~/Projects/" "~/anki/" "~/healthvana/" "~/Projects/anki_addons")
