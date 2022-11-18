@@ -257,7 +257,7 @@ before packages are loaded."
         magit-git-executable "/opt/homebrew/bin/git"
 
         auto-save-visited-mode t
-        projectile-project-search-path '("~/Projects/" "~/anki/" "~/healthvana/" "~/Projects/anki_addons")
+        projectile-project-search-path '("~/Projects/" "~/anki/" "~/healthvana/")
         fill-column 80
         require-final-newline t)
 
