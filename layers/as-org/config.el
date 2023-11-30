@@ -137,6 +137,7 @@
 (setq org-agenda-include-diary t)
 (setq org-tag-persistent-alist '(("work" . ?w)
                                  ("backlog" . ?b)
+                                 ("ankihub" . ?b)
                                  ("purchase" . ?p)
                                  ("sdm" . ??)
                                  ("X" . ?x)
