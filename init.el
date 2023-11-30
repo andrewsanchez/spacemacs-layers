@@ -11,7 +11,8 @@ This function should only modify configuration layer settings."
    dotspacemacs-ask-for-lazy-installation t
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
-   '(vimscript
+   '(lua
+     vimscript
      react
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t)
@@ -56,6 +57,7 @@ This function should only modify configuration layer settings."
      (org :variables
           org-enable-roam-support t
           org-enable-roam-protocol t
+          org-enable-roam-ui t
           org-enable-org-journal-support t
           org-enable-notifications t
           org-start-notification-daemon-on-startup t
@@ -82,11 +84,11 @@ This function should only modify configuration layer settings."
      as-org
      anki)
    dotspacemacs-additional-packages
-   '(
-     ;; magit-section
-     helm-rg
+   '(helm-rg
      mermaid-mode
-     groovy-mode)
+     groovy-mode
+     logview
+     just-mode)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '()
    dotspacemacs-install-packages 'used-only)
@@ -124,8 +126,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-scratch-buffer-persistent t
    dotspacemacs-scratch-buffer-unkillable t
    dotspacemacs-initial-scratch-message nil
-   dotspacemacs-themes '(solarized-dark
-                         solarized-light)
+   dotspacemacs-themes '(solarized-light
+                         solarized-dark)
    dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
@@ -257,7 +259,9 @@ before packages are loaded."
         magit-git-executable "/opt/homebrew/bin/git"
 
         auto-save-visited-mode t
-        projectile-project-search-path '("~/Projects/" "~/anki/" "~/healthvana/")
+        projectile-project-search-path '("~/Projects/" "~/anki/")
+        projectile-enable-caching t
+        projectile-indexing-method 'native
         fill-column 80
         require-final-newline t)
 
