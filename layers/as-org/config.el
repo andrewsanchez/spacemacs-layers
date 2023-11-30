@@ -77,8 +77,17 @@
         ("S" "TODO - Timestamped" entry (file+headline as/inbox "Collect")
          "* TODO %?\n:PROPERTIES:\n:CAPTURED: %U\n:END:\n%^t" :empty-lines 1)
 
+        ("T" "TODO - Plain" entry (file+headline as/inbox "Collect")
+         "* TODO %?\n:PROPERTIES:\n:CAPTURED: %U\n:END:" :empty-lines 1)
+
+        ("S" "TODO - Scheduled" entry (file+headline as/inbox "Collect")
+         "* TODO %?\nSCHEDULED: %^t\n:PROPERTIES:\n:CAPTURED: %U\n:END:" :empty-lines 1)
+
         ("d" "TODO - Deadline" entry (file+headline as/inbox "Collect")
          "* TODO %?\nDEADLINE: %^t\n:PROPERTIES:\n:CAPTURED: %U\n:END:" :empty-lines 1)
+
+        ("D" "DONE task" entry (file+olp+datetree as/inbox "Archive")
+         "* DONE %? \nCLOSED: %^u\n:CAPTURED: %U\n:END:" :empty-lines 1)
 
         ("b" "Timeblock" entry (file+olp+datetree as/inbox "Planning")
          (file "~/Dropbox/org/templates/timeblock.org") :time-prompt t :empty-lines 1)
