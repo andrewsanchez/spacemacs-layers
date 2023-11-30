@@ -169,6 +169,8 @@
       '((org-agenda-add-entry-text-maxlines 12)
         (htmlize-output-type 'css)))
 
+(setq org-icalendar-use-deadline '(event-if-todo-not-done event-if-not-todo))
+
 (setq org-publish-project-alist
       '(("org"
          :base-directory "~/org/"
